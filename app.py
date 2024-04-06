@@ -30,17 +30,17 @@ credentials = dict(st.secrets['credentials'])
 
 print(credentials)
 
-print(credentials['usernames']['edoardomarchetti2']['logged_in'])
-credentials['usernames']['edoardomarchetti2']['logged_in'] = True
-print(credentials['usernames']['edoardomarchetti2']['logged_in'])
+#print(credentials['usernames']['edoardomarchetti2']['logged_in'])
+#credentials['usernames']['edoardomarchetti2']['logged_in'] = True
+#print(credentials['usernames']['edoardomarchetti2']['logged_in'])
 
-authenticator = stauth.Authenticate(
-    credentials,
-    st.secrets['cookie']['name'],
-    st.secrets['cookie']['key'],
-    st.secrets['cookie']['expiry_days'],
-    st.secrets['pre-authorized']
-)
+#authenticator = stauth.Authenticate(
+#    credentials,
+#    st.secrets['cookie']['name'],
+#    st.secrets['cookie']['key'],
+#    st.secrets['cookie']['expiry_days'],
+#    st.secrets['pre-authorized']
+#)
 
 print('-------------------------')
 print('Chiavi sessione')
@@ -50,18 +50,18 @@ print('-------------------------')
 
 
 # Creating a login widget
-try:
-    authenticator.login()
-except LoginError as e:
-    st.error(e)
+#try:
+#    authenticator.login()
+#except LoginError as e:
+#    st.error(e)
 
 
 
-if st.session_state["authentication_status"]:
-    authenticator.logout()
-    st.write(f'Welcome *{st.session_state["name"]}*')
-    st.title('Now you can visit the pages')
-elif st.session_state["authentication_status"] is False:
-    st.error('Username/password is incorrect')
-elif st.session_state["authentication_status"] is None:
-    st.warning('Please enter your username and password')
+#if st.session_state["authentication_status"]:
+#    authenticator.logout()
+#    st.write(f'Welcome *{st.session_state["name"]}*')
+#    st.title('Now you can visit the pages')
+#elif st.session_state["authentication_status"] is False:
+#    st.error('Username/password is incorrect')
+#elif st.session_state["authentication_status"] is None:
+#    st.warning('Please enter your username and password')
