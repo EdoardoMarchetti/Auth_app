@@ -22,6 +22,10 @@ from streamlit_authenticator.utilities.exceptions import (CredentialsError,
 #     config['pre-authorized']
 # )
 
+print('-------------------------------------')
+print('Modificato')
+
+
 credentials = dict(st.secrets['credentials'])
 
 print(credentials['usernames']['edoardomarchetti2']['logged_in'])
