@@ -37,9 +37,9 @@ st.markdown(v)
 print(credentials)
 print(type(credentials))
 
-#print(credentials['usernames']['edoardomarchetti2']['logged_in'])
-#credentials['usernames']['edoardomarchetti2']['logged_in'] = True
-#print(credentials['usernames']['edoardomarchetti2']['logged_in'])
+print(credentials['usernames']['edoardomarchetti2']['logged_in'])
+credentials['usernames']['edoardomarchetti2']['logged_in'] = True
+print(credentials['usernames']['edoardomarchetti2']['logged_in'])
 
 #authenticator = stauth.Authenticate(
 #    credentials,
