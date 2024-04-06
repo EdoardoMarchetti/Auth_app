@@ -9,17 +9,25 @@ from streamlit_authenticator.utilities.exceptions import (CredentialsError,
                                                           ResetError,
                                                           UpdateError) 
 
-# Loading config file
-with open('./config.yaml', 'r', encoding='utf-8') as file:
-    config = yaml.load(file, Loader=SafeLoader)
+# # Loading config file
+# with open('./config.yaml', 'r', encoding='utf-8') as file:
+#     config = yaml.load(file, Loader=SafeLoader)
 
-# Creating the authenticator object
+# # Creating the authenticator object
+# authenticator = stauth.Authenticate(
+#     config['credentials'],
+#     config['cookie']['name'],
+#     config['cookie']['key'],
+#     config['cookie']['expiry_days'],
+#     config['pre-authorized']
+# )
+
 authenticator = stauth.Authenticate(
-    config['credentials'],
-    config['cookie']['name'],
-    config['cookie']['key'],
-    config['cookie']['expiry_days'],
-    config['pre-authorized']
+    dict(st.secrets['credentials']),
+    st.secrets['cookie']['name'],
+    st.secrets['cookie']['key'],
+    st.secrets['cookie']['expiry_days'],
+    st.secrets['pre-authorized']
 )
 
 print('-------------------------')
