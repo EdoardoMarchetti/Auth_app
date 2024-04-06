@@ -48,6 +48,8 @@ for k in st.session_state.keys():
     print(k)
 print('-------------------------')
 
+print(st.session_state)
+
 st.button('Ciao')
 
 
