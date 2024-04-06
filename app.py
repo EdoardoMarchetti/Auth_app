@@ -22,8 +22,10 @@ from streamlit_authenticator.utilities.exceptions import (CredentialsError,
 #     config['pre-authorized']
 # )
 
+credentials = dict(st.secrets['credentials'])
+
 authenticator = stauth.Authenticate(
-    dict(st.secrets['credentials']),
+    credentials,
     st.secrets['cookie']['name'],
     st.secrets['cookie']['key'],
     st.secrets['cookie']['expiry_days'],
