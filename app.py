@@ -28,6 +28,11 @@ print('Modificato')
 
 credentials = dict(st.secrets['credentials'])
 
+v = st.secrets['credentials']['usernames']['edoardomarchetti2']['logged_in']
+st.markdown(v)
+v = True
+st.markdown(v)
+
 print(credentials)
 print(type(credentials))
 
