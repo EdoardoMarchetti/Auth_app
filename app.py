@@ -22,7 +22,17 @@ from streamlit_authenticator.utilities.exceptions import (CredentialsError,
 #     config['pre-authorized']
 # )
 
-credentials = dict(st.secrets['credentials'])
+credentials = {'usernames':{}}
+#dict(st.secrets['credentials'])
+
+for user, values in st.secrets['credentials'].items():
+    credentials['usernames'][user] = {
+        'email': values['email'], 
+        'name': values['name'],
+        'password': values['password'],
+        'logged_in': values['logged_in'],
+        'failed_login_attempts' : values['failed_login_attempts']
+    }
 
 authenticator = stauth.Authenticate(
     credentials,
