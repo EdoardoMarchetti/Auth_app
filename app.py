@@ -26,7 +26,8 @@ print('-------------------------------------')
 print('Modificato')
 
 
-credentials = dict(st.secrets['credentials'])
+credentials = dict(st.secrets['credentials']).copy()
+
 
 v = st.secrets['credentials']['usernames']['edoardomarchetti2']['logged_in']
 st.markdown(v)
