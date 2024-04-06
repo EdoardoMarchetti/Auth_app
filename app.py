@@ -49,6 +49,8 @@ for k in st.session_state.keys():
     print(k)
 print('-------------------------')
 
+st.button()
+
 
 # Creating a login widget
 #try:
