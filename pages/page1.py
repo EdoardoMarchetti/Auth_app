@@ -1,6 +1,6 @@
-import yaml
 import streamlit as st
-from yaml.loader import SafeLoader
+import time
+import numpy as np
 import streamlit_authenticator as stauth
 from streamlit_authenticator.utilities.exceptions import (CredentialsError,
                                                           ForgotError,
@@ -8,6 +8,9 @@ from streamlit_authenticator.utilities.exceptions import (CredentialsError,
                                                           RegisterError,
                                                           ResetError,
                                                           UpdateError) 
+import yaml
+from yaml.loader import SafeLoader
+
 
 # Loading config file
 with open('./config.yaml', 'r', encoding='utf-8') as file:
@@ -22,26 +25,10 @@ authenticator = stauth.Authenticate(
     config['pre-authorized']
 )
 
-print('-------------------------')
-print('Chiavi sessione')
-for k in st.session_state.keys():
-    print(k)
-print('-------------------------')
-
-
-# Creating a login widget
-try:
-    authenticator.login()
-except LoginError as e:
-    st.error(e)
-
-
-
 if st.session_state["authentication_status"]:
     authenticator.logout()
-    st.write(f'Welcome *{st.session_state["name"]}*')
-    st.title('Now you can visit the pages')
-elif st.session_state["authentication_status"] is False:
-    st.error('Username/password is incorrect')
-elif st.session_state["authentication_status"] is None:
-    st.warning('Please enter your username and password')
+    #st.write(f'Welcome *{st.session_state["name"]}*')
+    st.title('Page 1')
+    st.markdown('unlocked')
+else: 
+    st.error('Please come back to main page and login')
