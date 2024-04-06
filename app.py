@@ -49,7 +49,7 @@ for k in st.session_state.keys():
     print(k)
 print('-------------------------')
 
-st.button()
+st.button('Ciao')
 
 
 # Creating a login widget
