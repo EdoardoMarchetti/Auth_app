@@ -28,6 +28,8 @@ print('Modificato')
 
 credentials = dict(st.secrets['credentials'])
 
+print(credentials)
+
 print(credentials['usernames']['edoardomarchetti2']['logged_in'])
 credentials['usernames']['edoardomarchetti2']['logged_in'] = True
 print(credentials['usernames']['edoardomarchetti2']['logged_in'])
