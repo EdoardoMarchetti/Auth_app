@@ -25,7 +25,7 @@ from streamlit_authenticator.utilities.exceptions import (CredentialsError,
 credentials = {'usernames':{}}
 #dict(st.secrets['credentials'])
 
-for user, values in st.secrets['credentials']['usernames']:
+for user, values in st.secrets['credentials']['usernames'].items():
     credentials['usernames'][user]={
         'email': values['email'],
         'name': values['name'],
